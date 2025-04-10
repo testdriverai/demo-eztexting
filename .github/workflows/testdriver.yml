@@ -15,7 +15,7 @@ jobs:
         with:
           key: ${{secrets.TESTDRIVER_API_KEY}}
           prompt: |
-            1. /run testdriver/testdriver.yml
+            1. /run testdriver/test.yml
           prerun: |
             cd $env:TEMP
             npm init -y
@@ -25,4 +25,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FORCE_COLOR: "3"
-          WEBSITE_URL: "https://example.com" # Define the website URL here
+          WEBSITE_URL: "https://spa.eztexting.com/guest/login" # Define the website URL here
+          TD_TEST_USERNAME: ${{ secrets.TD_TEST_USERNAME }}
+          TD_TEST_PASSWORD: ${{ secrets.TD_TEST_PASSWORD }}
