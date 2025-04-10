@@ -1,0 +1,252 @@
+version: 5.2.2
+session: 67f49be9a84e7b61dc5b030f
+steps:
+  - prompt: >-
+      focus chrome. click the 'Workflows' option on the screen. Select a
+      template and click 'Preview'. then click 'Use this Template'
+    commands:
+      - command: hover-text
+        text: Preview →
+        description: preview button on the After Hours Auto-Reply template
+        action: click
+      - command: hover-text
+        text: Use this Template
+        description: use this template button after previewing
+        action: click
+  - prompt: >-
+      focus chrome. click the 'Workflows' option on the screen. Select a
+      template and click 'Preview'. then click 'Use this Template'
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Hi ${FirstName}! Here's an exclusive offer for our subscribers
+        description: send message node containing Hi ${FirstName}
+        action: click
+      - command: hover-text
+        text: Delete Block
+        description: delete block option in the menu
+        action: click
+  - prompt: >-
+      locate the 'Conditional Split' action on the left side of the screen uner
+      the 'Actions' heading. Click it.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Conditional Split
+        description: conditional split action under the conditionals heading
+        action: drag-start
+  - prompt: >-
+      locate the last item in the workflow canvas in the middle of the screen
+      and click it
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Send Message
+        description: last send message action in the workflow canvas
+        action: drag-end
+  - prompt: >-
+      click the four blue squares are the bottom left of the main screen (in the
+      pill-shaped toolbar)
+    commands:
+      - command: hover-image
+        description: >-
+          four blue squares icon at the bottom left of the main screen (in the
+          pill-shaped toolbar)
+        action: click
+  - prompt: >-
+      scroll down the page until the 'Conditional Split' item is visible in the
+      center of the screen
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: scroll-until-text
+        text: Conditional Split
+        direction: down
+        method: keyboard
+  - prompt: >-
+      set conditions for the conditional split. Click 'edit  conditions'. Then
+      find the dropdown that matches the text 'select a variable' and click it.
+      Set the variable to First Name and the condition is 'Text is exactly' and 
+      the value to be "Mike"
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Edit Conditions
+        description: button to edit conditions for the conditional split
+        action: click
+      - command: hover-text
+        text: select a variable
+        description: dropdown to select a variable for the condition
+        action: click
+      - command: hover-text
+        text: First Name
+        description: option to select 'First Name' as the variable
+        action: click
+      - command: hover-text
+        text: Contains
+        description: dropdown to select the condition type
+        action: click
+      - command: hover-text
+        text: Text is exactly
+        description: option to select 'Text is exactly' as the condition
+        action: click
+  - prompt: in the last field after (Text) is exactly, type Mike
+    commands:
+      - command: hover-text
+        text: (Text) Is exactly
+        description: field label for the input box
+        action: click
+      - command: press-keys
+        keys:
+          - tab
+      - command: type
+        text: Mike
+  - prompt: click save
+    commands:
+      - command: hover-text
+        text: SAVE
+        description: save button in the dialog box
+        action: click
+  - prompt: click the three dots next to the send message node then click delete
+    commands:
+      - command: hover-text
+        text: ...
+        description: three dots next to the Send Message node
+        action: click
+      - command: hover-text
+        text: Delete
+        description: delete option in the dropdown menu
+        action: click
+  - prompt: >-
+      click the four blue squares are the bottom left of the main screen (in the
+      pill-shaped toolbar)
+    commands:
+      - command: hover-image
+        description: >-
+          four blue squares icon at the bottom left of the main screen (in the
+          pill-shaped toolbar)
+        action: click
+  - prompt: >-
+      locate the 'Send message' action on the left side of the screen under the
+      'Actions' heading. Click it.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Send message
+        description: Send message action under the Actions heading
+        action: drag-start
+  - prompt: >-
+      locate the 'Drag Action here' in the workflow canvas in the middle of the
+      screen and click it
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Drag Action Here
+        description: Drag Action Here in the workflow canvas
+        action: drag-end
+  - prompt: >-
+      locate the 'Send message' action on the left side of the screen under the
+      'Actions' heading. Click it.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Send message
+        description: Send message action under the Actions heading
+        action: drag-start
+  - prompt: >-
+      locate the 'Drag Action here' in the workflow canvas in the middle of the
+      screen and click it
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Drag Action Here
+        description: Drag Action Here in the workflow canvas
+        action: drag-end
+  - prompt: >-
+      click the left branched Send message node  (under conditions match) and in
+      the right-hand pane where it says Type your message type Hi Mike! then
+      click apply
+    commands:
+      - command: hover-text
+        text: Conditions match
+        description: conditions match button under conditional split
+        action: click
+      - command: hover-text
+        text: Send Message
+        description: left branched send message node under conditions match
+        action: click
+      - command: hover-text
+        text: Type your message
+        description: message input field in the right-hand pane
+        action: click
+      - command: type
+        text: Hi Mike!
+      - command: hover-text
+        text: APPLY
+        description: apply button in the right-hand pane
+        action: click
+  - prompt: >-
+      click the right branched Send message node (under conditions don't match)
+      and in the right-hand pane where it says Type your message type This is a
+      test! then click apply
+    commands:
+      - command: hover-text
+        text: Send Message
+        description: right branched send message node under conditions don't match
+        action: click
+      - command: hover-text
+        text: Type your message
+        description: message input field in the right-hand pane
+        action: click
+      - command: type
+        text: This is a test!
+      - command: hover-text
+        text: APPLY
+        description: apply button in the right-hand pane
+        action: click
+  - prompt: >-
+      click Edit name and append " Test" (make sure theres a space before Test)
+      to the name then save
+    commands:
+      - command: hover-text
+        text: Edit name
+        description: edit name link at the top of the workflow
+        action: click
+      - command: press-keys
+        keys:
+          - end
+      - command: type
+        text: ' Test'
+      - command: hover-text
+        text: SAVE
+        description: save button in the top right corner
+        action: click
+  - prompt: Publish the workflow
+    commands:
+      - command: hover-text
+        text: PUBLISH
+        description: publish button in the top right corner
+        action: click
+  - prompt: Publish the workflow
+    commands:
+      - command: hover-text
+        text: PUBLISH
+        description: publish button in the confirmation dialog
+        action: click
+  - prompt: wait 5 seconds
+    commands:
+      - command: wait
+        timeout: 5000
+  - prompt: assert the workflow now says PUBLISHED at the top of the screen
+    commands:
+      - command: assert
+        expect: the workflow now says PUBLISHED at the top of the screen
+

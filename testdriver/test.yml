@@ -1,0 +1,13 @@
+version: 4.2.25
+session: 67f2e66a64e48a1f6d98a326
+steps:
+  - prompt: click product and then workflows
+    commands:
+      - command: hover-text
+        text: Product
+        description: product menu in the header
+        action: click
+      - command: hover-text
+        text: Workflows
+        description: workflows option in the product menu
+        action: click
